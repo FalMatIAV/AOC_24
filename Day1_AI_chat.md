@@ -1,5 +1,6 @@
 ### Prompt
 ```python
+Bitte schreibe ein Phythonprogramm, dass die folgende Aufgabe löst. 
 Erstelle das Phythonprogramm nur auf Basis dieser Eingabe. Falls weitere Informationen fehlen, dann stelle entsprechende Fragen. Stelle immer nur eine Frage und warte auf die Antwort. Nachdem alle Informationen vorhanden sind, erstelle das Phythonprogramm.
  
 The Chief Historian is always present for the big Christmas sleigh launch, but nobody has seen him in months! Last anyone heard, he was visiting locations that are historically significant to the North Pole; a group of Senior Historians has asked you to accompany them as they check the places they think he was most likely to visit.
