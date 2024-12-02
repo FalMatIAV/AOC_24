@@ -4,15 +4,28 @@ def calculate_total_distance(list1, list2):
     list2_sorted = sorted(list2)
     
     # Berechne die Gesamtdistanz
-    # Die zip-Funktion nimmt zwei (oder mehr) iterierbare Objekte (in diesem Fall die sortierten Listen list1_sorted und list2_sorted) und kombiniert sie zu einem Iterator von Tupeln.
-    # Jedes Tupel enthält ein Element aus jeder der Eingabelisten an der entsprechenden Position.
-    # Beispiel: Wenn list1_sorted = [1, 2, 3] und list2_sorted = [4, 5, 6], dann ergibt zip(list1_sorted, list2_sorted) den Iterator [(1, 4), (2, 5), (3, 6)].
-    
     total_distance = sum(abs(a - b) for a, b in zip(list1_sorted, list2_sorted))
     
     return total_distance
-	
-	# Die beiden Listen
+
+def calculate_similarity_score(list1, list2):
+    # Erstelle ein Dictionary, um die Häufigkeit der Elemente in list2 zu zählen
+    count_dict = {}
+    for num in list2:
+        if num in count_dict:
+            count_dict[num] += 1
+        else:
+            count_dict[num] = 1
+    
+    # Berechne den Ähnlichkeitsscore
+    similarity_score = 0
+    for num in list1:
+        if num in count_dict:
+            similarity_score += num * count_dict[num]
+    
+    return similarity_score
+
+# Die beiden Listen
 list1 = [
 77442,
 71181,
@@ -2017,6 +2030,11 @@ list2 = [
 98020
 ]
 
-# Aufruf der Funktion und Ausgabe des Ergebnisses
+
+# Aufruf der Funktion und Ausgabe des Ergebnisses für die Gesamtdistanz
 total_distance = calculate_total_distance(list1, list2)
 print(f"Die Gesamtdistanz zwischen den beiden Listen beträgt: {total_distance}")
+
+# Aufruf der Funktion und Ausgabe des Ergebnisses für den Ähnlichkeitsscore
+similarity_score = calculate_similarity_score(list1, list2)
+print(f"Der Ähnlichkeitsscore zwischen den beiden Listen beträgt: {similarity_score}")
